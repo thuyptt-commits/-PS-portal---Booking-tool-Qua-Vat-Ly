@@ -2,11 +2,8 @@ import { LoginPage } from '../../pages/login.page';
 import { test } from '../fixtures/createGiaNCC.fixture';
 
 test(
-  'Create Supplier Price',
-  async ({
-    page,
-    supplierPricePage,
-  }) => {
+  'Add Supplier Price',
+  async ({ page, contractGiftPage }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.login(
@@ -15,70 +12,98 @@ test(
     );
 
     const supplierPriceData = {
+      giftId: '1555',
       legalEntity: 'LG90357 - HELLO',
 
-      merchants: [
-        '- Royal Long An Golf & Villas',
-        '- Movenpick Resort Phan Thiet',
-        '- BRG Golden Sands (Huế)',
-        '- Mad Cow Wine & Grill',
+      locations: [
+        '798 - Royal Long An Golf & Villas',
+        '246 - Movenpick Resort Phan Thiet',
       ],
 
-      vat: '10',
+      startDay: '17',
+      endDay: '31',
 
       merchantPrice: '10,0000',
+      clientPrice: '20,0000',
+      vat: '10',
 
-      minSellingPrice: '100,0000',
-
-      tncVi: 'điều kiện tiếng việt',
-
-      tncEn: 'điều kiện tiếng anh',
+      tncVi: 'điều kiện sử dụng tiếng việt',
+      tncEn: 'điều kiện sử dụng tiếng anh',
 
       note: 'note',
     };
 
-    await supplierPricePage.openContractGiftDetail('1555');
+    await contractGiftPage.openContractGiftManagement();
 
-    await supplierPricePage.openSupplierPriceTab();
+    await contractGiftPage.openGiftDetail(
+      supplierPriceData.giftId
+    );
 
-    await supplierPricePage.clickAddSupplierPrice();
+    await contractGiftPage.openSupplierPriceTab();
 
-    await supplierPricePage.selectLegalEntity(
+    await contractGiftPage.clickAddSupplierPrice();
+
+    await contractGiftPage.selectLegalEntity(
       supplierPriceData.legalEntity
     );
 
-    await supplierPricePage.checkNoContract();
+    await contractGiftPage.checkNoContract();
 
-    await supplierPricePage.selectMerchants(
-      supplierPriceData.merchants
+    await contractGiftPage.selectLocations(
+      supplierPriceData.locations
     );
 
-    await supplierPricePage.fillVat(
-      supplierPriceData.vat
+    await contractGiftPage.selectApplyDateRange(
+      supplierPriceData.startDay,
+      supplierPriceData.endDay
     );
 
-    await supplierPricePage.fillMerchantPrice(
-      supplierPriceData.merchantPrice
-    );
+    await contractGiftPage.fillPriceInfo({
+      merchantPrice:
+        supplierPriceData.merchantPrice,
+      clientPrice:
+        supplierPriceData.clientPrice,
+      vat: supplierPriceData.vat,
+    });
 
-    await supplierPricePage.fillMinSellingPrice(
-      supplierPriceData.minSellingPrice
-    );
-
-    await supplierPricePage.fillTncVi(
-      supplierPriceData.tncVi
-    );
-
-    await supplierPricePage.fillTncEn(
-      supplierPriceData.tncEn
-    );
-
-    await supplierPricePage.fillNote(
+    await contractGiftPage.fillTerms(
+      supplierPriceData.tncVi,
+      supplierPriceData.tncEn,
       supplierPriceData.note
     );
 
-    await supplierPricePage.save();
+    await contractGiftPage.saveSupplierPrice();
 
-    await supplierPricePage.verifySuccess();
+    await contractGiftPage.verifyResult([
+      {
+        fieldName: 'Pháp nhân',
+        message: 'Vui lòng chọn pháp nhân',
+      },
+      {
+        fieldName: 'Thời gian áp dụng',
+        message: 'Vui lòng chọn thời gian áp dụng',
+      },
+      {
+        fieldName: 'Địa điểm áp dụng',
+        message: 'Vui lòng chọn địa điểm áp dụng',
+      },
+      {
+        fieldName: 'Giá nhập thanh toán Merchant',
+        message: 'Vui lòng điền giá nhập thanh toán Merchant',
+      },
+      {
+        fieldName: 'Giá bán tối thiểu cho Client',
+        message: 'Vui lòng điền giá bán tối thiểu cho Client',
+      },
+      {
+        fieldName: 'TnC (Vi)',
+        message: 'Vui lòng điền TnC (Vi)',
+      },
+      {
+        fieldName: 'TnC (En)',
+        message: 'Vui lòng điền TnC (En)',
+      }
+
+    ]);
   }
 );

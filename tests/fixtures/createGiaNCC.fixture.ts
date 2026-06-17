@@ -1,17 +1,19 @@
 import { test as base } from '@playwright/test';
-import { SupplierPricePage } from '../../pages/createGiaNCC.page';
-type SupplierPriceFixture = {
-  supplierPricePage: SupplierPricePage;
+import { ContractGiftPage } from '../../pages/createGiaNCC.page';
+
+type Fixtures = {
+  contractGiftPage: ContractGiftPage;
 };
 
-export const test =
-  base.extend<SupplierPriceFixture>({
-    supplierPricePage: async (
-      { page },
-      use
-    ) => {
-      await use(
-        new SupplierPricePage(page)
-      );
-    },
-  });
+export const test = base.extend<Fixtures>({
+  contractGiftPage: async (
+    { page },
+    use
+  ) => {
+    await use(
+      new ContractGiftPage(page)
+    );
+  },
+});
+
+export { expect } from '@playwright/test';
