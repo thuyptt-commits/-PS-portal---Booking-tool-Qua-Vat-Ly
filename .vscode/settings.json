@@ -1,5 +1,6 @@
 {
     "powerquery.client.additionalSymbolsDirectories": [
-        "/Users/phanthithanhthuy/Documents/Auto /-PS-portal---Booking-tool-Qua-Vat-Ly/.vscode/excel-pq-symbols"
+        "/Users/phanthithanhthuy/Documents/Auto /-PS-portal---Booking-tool-Qua-Vat-Ly/.vscode/excel-pq-symbols",
+        "/Users/phanthithanhthuy/Documents/Auto /PSPortat-BKtool-QuaVatLy/.vscode/excel-pq-symbols"
     ]
 }
