@@ -1,14 +1,26 @@
-import { Page, expect, TestInfo } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 
 export class ContractGiftPage {
-    constructor(private page: Page) { }
+    constructor(private page: Page) {}
+
+    // =========================
+    // SCREENSHOT HELPER
+    // =========================
+    private async takeScreenshot(name: string) {
+        await this.page.screenshot({
+            path: `test-results/${name}-${Date.now()}.png`,
+            fullPage: true,
+        });
+    }
 
     async openContractGiftManagement() {
         await this.page.getByText('Vận hành PS').click();
 
-        await this.page.getByRole('link', {
-            name: 'PS Quản lý Quà hợp đồng',
-        }).click();
+        await this.page
+            .getByRole('link', {
+                name: 'PS Quản lý Quà hợp đồng',
+            })
+            .click();
     }
 
     async openGiftDetail(giftId: string) {
@@ -17,16 +29,18 @@ export class ContractGiftPage {
     }
 
     async openSupplierPriceTab() {
-        await this.page.getByRole('tab', {
-            name: 'Giá nhà cung cấp',
-            exact: true,
-        }).click();
+        await this.page
+            .getByRole('tab', {
+                name: 'Giá nhà cung cấp',
+                exact: true,
+            })
+            .click();
     }
 
     async clickAddSupplierPrice() {
-        await this.page.getByRole('button', {
-            name: /Thêm giá quà/
-        }).click();
+        await this.page
+            .getByRole('button', { name: /Thêm giá quà/ })
+            .click();
     }
 
     async selectLegalEntity(legalEntity: string) {
@@ -48,7 +62,9 @@ export class ContractGiftPage {
 
     async selectLocations(locations: string[]) {
         await this.page
-            .locator('.ant-select.ant-select-in-form-item.ant-select-multiple.ant-select-allow-clear > .ant-select-selector > .ant-select-selection-overflow')
+            .locator(
+                '.ant-select.ant-select-in-form-item.ant-select-multiple.ant-select-allow-clear > .ant-select-selector > .ant-select-selection-overflow'
+            )
             .first()
             .click();
 
@@ -58,9 +74,11 @@ export class ContractGiftPage {
     }
 
     async selectApplyDateRange(startDay: string, endDay: string) {
-        await this.page.getByRole('textbox', {
-            name: '* Thời gian áp dụng',
-        }).click();
+        await this.page
+            .getByRole('textbox', {
+                name: '* Thời gian áp dụng',
+            })
+            .click();
 
         const visibleCells = this.page.locator('.ant-picker-cell-in-view');
 
@@ -112,35 +130,25 @@ export class ContractGiftPage {
         }).click();
     }
 
-    async verifyCreateSuccess(testInfo: TestInfo) {
+    async verifyCreateSuccess() {
         await expect(this.page.getByText('Tạo thành công')).toBeVisible({
             timeout: 10000,
         });
-
-       // await this.takeScreenshot('create-success', testInfo);
     }
 
+    // =========================
+    // VERIFY RESULT (FIXED)
+    // =========================
     async verifyResult(
         requiredFieldErrors?: {
             fieldName: string;
             message: string;
-        }[],
-        testInfo?: TestInfo
+        }[]
     ) {
         const timeout = 3000;
         const start = Date.now();
 
-        const attach = async (name: string) => {
-            if (!testInfo) return;
-
-            await testInfo.attach(name, {
-                body: await this.page.screenshot({ fullPage: true }),
-                contentType: 'image/png',
-            });
-        };
-
         while (Date.now() - start < timeout) {
-
             // ======================
             // Case 1: Success Toast
             // ======================
@@ -149,7 +157,7 @@ export class ContractGiftPage {
                 .filter({ hasText: 'Tạo thành công' });
 
             if (await successToast.count()) {
-                await attach('success');
+                await this.takeScreenshot('success');
                 console.log('✅ Tạo thành công');
                 return;
             }
@@ -162,10 +170,12 @@ export class ContractGiftPage {
                     const fieldError = this.page
                         .locator('.ant-form-item')
                         .filter({ hasText: error.fieldName })
-                        .locator('.ant-form-item-explain, .ant-form-item-explain-error');
+                        .locator(
+                            '.ant-form-item-explain, .ant-form-item-explain-error'
+                        );
 
                     if (await fieldError.getByText(error.message).count()) {
-                        await attach('validation');
+                        await this.takeScreenshot('validation');
                         console.log(
                             `⚠️ Validation: [${error.fieldName}] - ${error.message}`
                         );
@@ -183,9 +193,7 @@ export class ContractGiftPage {
 
             if (await errorToast.count()) {
                 const message = await errorToast.first().textContent();
-
-                await attach('error-toast');
-
+                await this.takeScreenshot('error-toast');
                 console.error(`❌ Error Toast: ${message?.trim()}`);
                 return;
             }
@@ -196,7 +204,7 @@ export class ContractGiftPage {
         // ======================
         // Case 4: Fallback
         // ======================
-        await attach('unknown-error');
+        await this.takeScreenshot('unknown-error');
 
         throw new Error(
             '❌ Không tìm thấy Success/Validation/Error trong 3s'
