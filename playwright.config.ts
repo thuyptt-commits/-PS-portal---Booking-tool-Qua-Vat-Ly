@@ -13,7 +13,7 @@ export default defineConfig({
     actionTimeout: 0,
 
     launchOptions: {
-      slowMo: 500,
+      slowMo: 200,
     },
 
     // 📸 screenshot khi fail
