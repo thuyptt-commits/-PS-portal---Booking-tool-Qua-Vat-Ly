@@ -26,8 +26,8 @@ createSystemGiftTest(
                 },
             ],
 
-            giftNameVi: 'qua tuoi 3',
-            giftNameEn: 'qua tuoi 3',
+            giftNameVi: 'qua tuoi 7',
+            giftNameEn: 'qua tuoi 7',
 
             reconciliationMethod:
                 '1-Thanh toán theo thực tế sử dụng',

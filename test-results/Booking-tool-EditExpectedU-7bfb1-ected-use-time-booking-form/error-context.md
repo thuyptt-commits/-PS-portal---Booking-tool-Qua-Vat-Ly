@@ -1,0 +1,374 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Booking-tool/EditExpectedUseTime.spec.ts >> Edit expected use time booking form
+- Location: tests/Booking-tool/EditExpectedUseTime.spec.ts:4:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - complementary [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e8]:
+          - img [ref=e10]
+          - img "Vercel Logo" [ref=e11]
+        - menu [ref=e12]:
+          - menuitem "container Quick Product Orders" [ref=e13] [cursor=pointer]:
+            - img "container" [ref=e14]:
+              - img [ref=e15]
+            - link "Quick Product Orders" [ref=e18]:
+              - /url: /quick-product-order
+          - menuitem "fire Quản lý deal HubSpot" [ref=e19] [cursor=pointer]:
+            - img "fire" [ref=e20]:
+              - img [ref=e21]
+            - link "Quản lý deal HubSpot" [ref=e24]:
+              - /url: /hubspot
+          - menuitem "bank Quản lý nhà phát hành" [ref=e25] [cursor=pointer]:
+            - img "bank" [ref=e26]:
+              - img [ref=e27]
+            - link "Quản lý nhà phát hành" [ref=e30]:
+              - /url: /publisher
+          - menuitem "cluster Quản lý chiến dịch" [ref=e31] [cursor=pointer]:
+            - img "cluster" [ref=e32]:
+              - img [ref=e33]
+            - generic [ref=e35]: Quản lý chiến dịch
+          - menuitem "alipay Quản lý Chữ ký số" [ref=e36] [cursor=pointer]:
+            - img "alipay" [ref=e37]:
+              - img [ref=e38]
+            - generic [ref=e40]: Quản lý Chữ ký số
+          - menuitem "shop Quản lý Merchant" [ref=e41] [cursor=pointer]:
+            - img "shop" [ref=e42]:
+              - img [ref=e43]
+            - generic [ref=e45]: Quản lý Merchant
+          - menuitem "shop Quản lý PO" [ref=e46] [cursor=pointer]:
+            - img "shop" [ref=e47]:
+              - img [ref=e48]
+            - generic [ref=e50]: Quản lý PO
+          - menuitem "file Quản lý hợp đồng" [ref=e51] [cursor=pointer]:
+            - img "file" [ref=e52]:
+              - img [ref=e53]
+            - generic [ref=e55]: Quản lý hợp đồng
+          - menuitem "pie-chart Đối soát tự động" [ref=e56] [cursor=pointer]:
+            - img "pie-chart" [ref=e57]:
+              - img [ref=e58]
+            - generic [ref=e60]: Đối soát tự động
+          - menuitem "node-index Vận hành PS" [expanded] [ref=e61] [cursor=pointer]:
+            - img "node-index" [ref=e62]:
+              - img [ref=e63]
+            - generic [ref=e65]: Vận hành PS
+          - list [ref=e66]:
+            - menuitem "solution PS Quản lý Category" [ref=e67] [cursor=pointer]:
+              - img "solution" [ref=e68]:
+                - img [ref=e69]
+              - link "PS Quản lý Category" [ref=e72]:
+                - /url: /category
+            - menuitem "solution PS Quản lý thương hiệu" [ref=e73] [cursor=pointer]:
+              - img "solution" [ref=e74]:
+                - img [ref=e75]
+              - link "PS Quản lý thương hiệu" [ref=e78]:
+                - /url: /brands
+            - menuitem "solution PS Quản lý cửa hàng" [ref=e79] [cursor=pointer]:
+              - img "solution" [ref=e80]:
+                - img [ref=e81]
+              - link "PS Quản lý cửa hàng" [ref=e84]:
+                - /url: /brand-offices
+            - menuitem "solution PS Quản lý Quà hợp đồng" [ref=e85] [cursor=pointer]:
+              - img "solution" [ref=e86]:
+                - img [ref=e87]
+              - link "PS Quản lý Quà hợp đồng" [ref=e90]:
+                - /url: /contract-gifts
+            - menuitem "solution PS Quản lý quà hệ thống" [ref=e91] [cursor=pointer]:
+              - img "solution" [ref=e92]:
+                - img [ref=e93]
+              - link "PS Quản lý quà hệ thống" [ref=e96]:
+                - /url: /system-gifts
+            - menuitem "solution PS Quản lý thương hiệu quà hệ thống" [ref=e97] [cursor=pointer]:
+              - img "solution" [ref=e98]:
+                - img [ref=e99]
+              - link "PS Quản lý thương hiệu quà hệ thống" [ref=e102]:
+                - /url: /system-brands
+            - menuitem "cloud-upload Quản lý Import dữ liệu PS" [ref=e103] [cursor=pointer]:
+              - img "cloud-upload" [ref=e104]:
+                - img [ref=e105]
+              - link "Quản lý Import dữ liệu PS" [ref=e109]:
+                - /url: /manage-import-ps
+            - menuitem "partition Booking Tool" [expanded] [ref=e110] [cursor=pointer]:
+              - img "partition" [ref=e111]:
+                - img [ref=e112]
+              - generic [ref=e114]: Booking Tool
+            - list [ref=e115]:
+              - menuitem "mail Email Template" [ref=e116] [cursor=pointer]:
+                - img "mail" [ref=e117]:
+                  - img [ref=e118]
+                - link "Email Template" [ref=e121]:
+                  - /url: /ps-cs/booking-tool/email-template
+              - menuitem "copy Danh sách booking" [ref=e122] [cursor=pointer]:
+                - img "copy" [ref=e123]:
+                  - img [ref=e124]
+                - link "Danh sách booking" [ref=e127]:
+                  - /url: /ps-cs/booking-tool/booking
+              - menuitem "copy Kiểm tra voucher" [ref=e128] [cursor=pointer]:
+                - img "copy" [ref=e129]:
+                  - img [ref=e130]
+                - link "Kiểm tra voucher" [ref=e133]:
+                  - /url: /ps-cs/booking-tool/voucher
+          - menuitem "credit-card Quản lý thẻ" [ref=e134] [cursor=pointer]:
+            - img "credit-card" [ref=e135]:
+              - img [ref=e136]
+            - generic [ref=e138]: Quản lý thẻ
+          - menuitem "credit-card VOP" [ref=e139] [cursor=pointer]:
+            - img "credit-card" [ref=e140]:
+              - img [ref=e141]
+            - generic [ref=e143]: VOP
+          - menuitem "user Quản lý khách hàng" [ref=e144] [cursor=pointer]:
+            - img "user" [ref=e145]:
+              - img [ref=e146]
+            - generic [ref=e148]: Quản lý khách hàng
+          - menuitem "dollar-circle Yêu cầu thanh toán" [ref=e149] [cursor=pointer]:
+            - img "dollar-circle" [ref=e150]:
+              - img [ref=e151]
+            - generic [ref=e153]: Yêu cầu thanh toán
+          - menuitem "apartment Quản lý mua hàng với NCC" [ref=e154] [cursor=pointer]:
+            - img "apartment" [ref=e155]:
+              - img [ref=e156]
+            - generic [ref=e158]: Quản lý mua hàng với NCC
+          - menuitem "deployment-unit Client API TopUp" [ref=e159] [cursor=pointer]:
+            - img "deployment-unit" [ref=e160]:
+              - img [ref=e161]
+            - generic [ref=e163]: Client API TopUp
+          - menuitem "deployment-unit Ocr platform" [ref=e164] [cursor=pointer]:
+            - img "deployment-unit" [ref=e165]:
+              - img [ref=e166]
+            - generic [ref=e168]: Ocr platform
+          - menuitem "deployment-unit Callio platform" [ref=e169] [cursor=pointer]:
+            - img "deployment-unit" [ref=e170]:
+              - img [ref=e171]
+            - generic [ref=e173]: Callio platform
+          - menuitem "apartment Quản lý kho" [ref=e174] [cursor=pointer]:
+            - img "apartment" [ref=e175]:
+              - img [ref=e176]
+            - generic [ref=e178]: Quản lý kho
+          - menuitem "audit Quản lý quyền truy cập" [ref=e179] [cursor=pointer]:
+            - img "audit" [ref=e180]:
+              - img [ref=e181]
+            - link "Quản lý quyền truy cập" [ref=e184]:
+              - /url: /permissions
+      - generic [ref=e186] [cursor=pointer]:
+        - generic [ref=e188]: Version 6.4.57
+        - img "menu-fold" [ref=e190]:
+          - img [ref=e191]
+    - generic [ref=e193]:
+      - generic [ref=e200] [cursor=pointer]:
+        - generic [ref=e202]: q
+        - img "caret-down" [ref=e203]:
+          - img [ref=e204]
+      - main [ref=e206]:
+        - generic [ref=e209]:
+          - navigation [ref=e210]:
+            - list [ref=e211]:
+              - listitem [ref=e212]: Booking Tool/
+              - listitem [ref=e213]:
+                - link "Danh sách Booking" [ref=e215] [cursor=pointer]:
+                  - /url: /ps-cs/booking-tool/booking
+                - text: /
+              - listitem [ref=e216]: Chi tiết Booking
+          - generic [ref=e217]:
+            - generic "Chi tiết Booking" [ref=e219]
+            - generic [ref=e223]:
+              - button "save Lưu Booking" [ref=e225] [cursor=pointer]:
+                - img "save" [ref=e226]:
+                  - img [ref=e227]
+                - generic [ref=e229]: Lưu Booking
+              - button "copy Duplicate Booking" [ref=e231] [cursor=pointer]:
+                - img "copy" [ref=e232]:
+                  - img [ref=e233]
+                - generic [ref=e235]: Duplicate Booking
+              - button "lock Đóng Booking" [ref=e237] [cursor=pointer]:
+                - img "lock" [ref=e238]:
+                  - img [ref=e239]
+                - generic [ref=e241]: Đóng Booking
+        - generic [ref=e242]:
+          - tablist [ref=e243]:
+            - generic [ref=e245]:
+              - tab "Thông tin chi tiết" [selected] [ref=e247] [cursor=pointer]
+              - tab "Lịch sử thao tác" [ref=e249] [cursor=pointer]
+              - tab "Lịch sử gửi mail" [ref=e251] [cursor=pointer]
+          - generic:
+            - generic:
+              - tabpanel "Thông tin chi tiết"
+        - generic [ref=e253]:
+          - button "right Thông tin Booking" [expanded] [ref=e254] [cursor=pointer]:
+            - img "right" [ref=e256]:
+              - img [ref=e257]
+            - generic [ref=e259]: Thông tin Booking
+          - table [ref=e264]:
+            - rowgroup [ref=e265]:
+              - 'row "Tiêu đề Booking: JCB on Mini App - Luann - Miễn phí 01 đêm trải nghiệm dịch vụ tại 40 khách sạn và resort cao cấp tại Việt Nam. - 25-06-2026" [ref=e266]':
+                - 'cell "Tiêu đề Booking: JCB on Mini App - Luann - Miễn phí 01 đêm trải nghiệm dịch vụ tại 40 khách sạn và resort cao cấp tại Việt Nam. - 25-06-2026" [ref=e267]':
+                  - generic [ref=e268]:
+                    - generic [ref=e269]: "Tiêu đề Booking:"
+                    - generic [ref=e270]: JCB on Mini App - Luann - Miễn phí 01 đêm trải nghiệm dịch vụ tại 40 khách sạn và resort cao cấp tại Việt Nam. - 25-06-2026
+              - 'row "Mã Booking: PSUB183156" [ref=e271]':
+                - 'cell "Mã Booking: PSUB183156" [ref=e272]':
+                  - generic [ref=e273]:
+                    - generic [ref=e274]: "Mã Booking:"
+                    - generic [ref=e275]: PSUB183156
+              - 'row "Thời gian tạo: 14:54:38 22/06/2026 Thời gian chỉnh sửa gần nhất:" [ref=e276]':
+                - 'cell "Thời gian tạo: 14:54:38 22/06/2026" [ref=e277]':
+                  - generic [ref=e278]:
+                    - generic [ref=e279]: "Thời gian tạo:"
+                    - generic [ref=e280]: 14:54:38 22/06/2026
+                - cell "Thời gian chỉnh sửa gần nhất:" [ref=e281]:
+                  - generic [ref=e283]: "Thời gian chỉnh sửa gần nhất:"
+              - 'row "Email người xử lí: Người chỉnh sửa gần nhất:" [ref=e284]':
+                - cell "Email người xử lí:" [ref=e285]:
+                  - generic [ref=e287]: "Email người xử lí:"
+                - cell "Người chỉnh sửa gần nhất:" [ref=e288]:
+                  - generic [ref=e290]: "Người chỉnh sửa gần nhất:"
+              - 'row "Tên người xử lí: Trạng thái: Chưa gán CS" [ref=e291]':
+                - cell "Tên người xử lí:" [ref=e292]:
+                  - generic [ref=e294]: "Tên người xử lí:"
+                - 'cell "Trạng thái: Chưa gán CS" [ref=e295]':
+                  - generic [ref=e296]:
+                    - generic [ref=e297]: "Trạng thái:"
+                    - generic [ref=e299]: Chưa gán CS
+              - 'row "Nguồn tạo Booking: WHITELABEL Tình trạng hiện tại: 1. Khởi tạo Booking" [ref=e300]':
+                - 'cell "Nguồn tạo Booking: WHITELABEL" [ref=e301]':
+                  - generic [ref=e302]:
+                    - generic [ref=e303]: "Nguồn tạo Booking:"
+                    - generic [ref=e304]: WHITELABEL
+                - 'cell "Tình trạng hiện tại: 1. Khởi tạo Booking" [ref=e305]':
+                  - generic [ref=e306]:
+                    - generic [ref=e307]: "Tình trạng hiện tại:"
+                    - generic [ref=e308]: 1. Khởi tạo Booking
+        - generic [ref=e310]:
+          - tablist [ref=e311]:
+            - tab "Khởi tạo" [selected] [ref=e315] [cursor=pointer]
+          - tabpanel "Khởi tạo" [ref=e318]:
+            - generic [ref=e322]:
+              - group [ref=e323]:
+                - generic [ref=e325]:
+                  - button "right Thông tin dịch vụ" [expanded] [ref=e326] [cursor=pointer]:
+                    - img "right" [ref=e328]:
+                      - img [ref=e329]
+                    - generic [ref=e331]: Thông tin dịch vụ
+                  - generic [ref=e333]:
+                    - alert [ref=e337]:
+                      - img "info-circle" [ref=e338]:
+                        - img [ref=e339]
+                      - generic [ref=e342]: Dạng chiến dịch "CS tạo booking - Hệ thống tự xuất code"
+                    - generic [ref=e343]:
+                      - generic [ref=e345]:
+                        - generic "Tên chiến dịch" [ref=e347]: "* Tên chiến dịch"
+                        - generic [ref=e351] [cursor=pointer]:
+                          - generic [ref=e352]:
+                            - combobox "* Tên chiến dịch" [disabled] [ref=e354]
+                            - generic "WL621277 - JCB on Mini App" [ref=e355]
+                          - generic:
+                            - img:
+                              - img
+                      - generic [ref=e356]:
+                        - generic [ref=e357]:
+                          - generic "Tên dịch vụ" [ref=e359]: "* Tên dịch vụ"
+                          - generic [ref=e363] [cursor=pointer]:
+                            - generic [ref=e364]:
+                              - combobox "* Tên dịch vụ" [disabled] [ref=e366]
+                              - generic "11058 - Miễn phí 01 đêm trải nghiệm dịch vụ tại 40 khách sạn và resort cao cấp tại Việt Nam." [ref=e367]
+                            - generic:
+                              - img:
+                                - img
+                        - generic [ref=e368] [cursor=pointer]:
+                          - img "eye" [ref=e369]:
+                            - img [ref=e370]
+                          - generic [ref=e372]: Xem chi tiết Thông tin dịch vụ
+                      - generic [ref=e374]:
+                        - generic "Địa điểm sử dụng (hub)" [ref=e376]: "* Địa điểm sử dụng (hub)"
+                        - generic [ref=e380] [cursor=pointer]:
+                          - generic [ref=e381]:
+                            - combobox "* Địa điểm sử dụng (hub)" [ref=e383]
+                            - generic "209535 - Silk Path Grand Sapa Resort & Spa - Đồi Quan Thượng, Tổ 5, Phường Sa Pa, Thị xã Sa Pa, Lào Cai" [ref=e384]
+                          - generic:
+                            - img:
+                              - img
+                      - generic [ref=e385]:
+                        - generic [ref=e386]:
+                          - generic "Chi tiết dịch vụ" [ref=e388]: "* Chi tiết dịch vụ"
+                          - generic [ref=e392] [cursor=pointer]:
+                            - combobox "* Chi tiết dịch vụ" [ref=e395]
+                            - generic:
+                              - img:
+                                - img
+                        - generic [ref=e397] [cursor=pointer]:
+                          - img "eye" [ref=e398]:
+                            - img [ref=e399]
+                          - generic [ref=e401]: Mô tả chi tiết
+                      - generic [ref=e403]:
+                        - generic "Loại dịch vụ" [ref=e405]: "* Loại dịch vụ"
+                        - generic [ref=e409] [cursor=pointer]:
+                          - combobox "* Loại dịch vụ" [disabled] [ref=e412]
+                          - generic:
+                            - img:
+                              - img
+                      - generic [ref=e415]:
+                        - generic "Số lượng dịch vụ đặt chỗ (mới)" [ref=e417]: "* Số lượng dịch vụ đặt chỗ (mới)"
+                        - spinbutton "* Số lượng dịch vụ đặt chỗ (mới)" [ref=e423]
+                    - generic [ref=e424]:
+                      - generic "Yêu cầu đặc biệt khác" [ref=e426]
+                      - textbox "Yêu cầu đặc biệt khác" [ref=e430]:
+                        - /placeholder: Nhập yêu cầu khác của khách (nếu có)
+                    - generic [ref=e431]:
+                      - generic [ref=e432]:
+                        - generic "Phương thức Remind" [ref=e434]: "* Phương thức Remind"
+                        - generic [ref=e438] [cursor=pointer]:
+                          - combobox "* Phương thức Remind" [ref=e441]
+                          - generic:
+                            - img:
+                              - img
+                      - generic [ref=e442]:
+                        - generic "Phương thức Survey" [ref=e444]: "* Phương thức Survey"
+                        - generic [ref=e448] [cursor=pointer]:
+                          - combobox "* Phương thức Survey" [ref=e451]
+                          - generic:
+                            - img:
+                              - img
+                      - generic [ref=e452]:
+                        - generic "Hotline (SMS)" [ref=e454]: "* Hotline (SMS)"
+                        - textbox "* Hotline (SMS)" [disabled] [ref=e458]: "1800282879"
+                      - generic [ref=e459]:
+                        - generic "Ngôn ngữ" [ref=e461]: "* Ngôn ngữ"
+                        - generic [ref=e465] [cursor=pointer]:
+                          - combobox "* Ngôn ngữ" [ref=e468]
+                          - generic:
+                            - img:
+                              - img
+                      - generic [ref=e469]:
+                        - generic "Loại Booking (Thanh toán/Không thanh toán)" [ref=e471]: "* Loại Booking (Thanh toán/Không thanh toán)"
+                        - generic [ref=e475] [cursor=pointer]:
+                          - combobox "* Loại Booking (Thanh toán/Không thanh toán)" [ref=e478]
+                          - generic:
+                            - img:
+                              - img
+              - group [ref=e479]:
+                - generic [ref=e481]:
+                  - button "right Thông tin khách hàng" [expanded] [ref=e482] [cursor=pointer]:
+                    - img "right" [ref=e484]:
+                      - img [ref=e485]
+                    - generic [ref=e487]: Thông tin khách hàng
+                  - generic [ref=e489]:
+                    - generic [ref=e490]: "Người mua:"
+                    - generic [ref=e491]: "Người sử dụng:"
+  - alert [ref=e492]: UrBox | UrCard Dashboard
+```

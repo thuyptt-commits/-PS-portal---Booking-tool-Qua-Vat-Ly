@@ -18,7 +18,7 @@ systemGiftApprovalTest(
         await systemGiftApprovalPage.openSystemGiftList();
 
         const data = {
-            giftId: '501',
+            giftId: '505',
         };
 
         await systemGiftApprovalPage.openGiftDetail(

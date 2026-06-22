@@ -8,7 +8,7 @@ export class SystemGiftApprovalPage {
 
         await this.page
             .getByRole('link', {
-                name: 'PS Quản lý Quà hợp đồng',
+                name: 'PS Quản lý Quà hệ thống',
             })
             .click();
     }
@@ -86,6 +86,32 @@ export class SystemGiftApprovalPage {
             console.log(
                 '✅ Tạo quà trên Hub thành công'
             );
+
+            // chờ trang reload dữ liệu
+            await this.page.waitForLoadState('networkidle');
+
+            // const hubGiftId = (
+            //     await this.page
+            //         .locator('tr')
+            //         .filter({
+            //             hasText: 'Thông tin mã ID quà trên hub',
+            //         })
+            //         .locator('td')
+            //         .last()
+            //         .textContent()
+            // )?.trim();
+
+            // if (!hubGiftId) {
+            //     throw new Error(
+            //         '❌ Không lấy được ID quà trên Hub'
+            //     );
+            // }
+
+            // console.log(
+            //     `✅ Hub Gift ID: ${hubGiftId}`
+            // );
+
+            // return hubGiftId;
         } catch {
             const errorToast = this.page.locator(
                 '.ant-message-notice, .ant-notification-notice'
