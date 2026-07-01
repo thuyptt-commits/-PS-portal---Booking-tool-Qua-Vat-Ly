@@ -17,17 +17,13 @@ createSystemGiftTest(
 
             contractGifts: [
                 {
-                    id: '1563',
-                    name: '1563 - Hoa Khô - Duplicate',
-                },
-                {
-                    id: '1564',
-                    name: '1564 - Qùa test QVL',
-                },
+                    id: '1570',
+                    name: '1570 - Quà Hoa Lan',
+                }
             ],
 
-            giftNameVi: 'qua tuoi 7',
-            giftNameEn: 'qua tuoi 7',
+            giftNameVi: 'qua tuoi 9',
+            giftNameEn: 'qua tuoi 9',
 
             reconciliationMethod:
                 '1-Thanh toán theo thực tế sử dụng',

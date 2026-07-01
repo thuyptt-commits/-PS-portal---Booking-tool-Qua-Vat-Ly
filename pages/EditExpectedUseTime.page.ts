@@ -2,7 +2,7 @@ import { Page } from '@playwright/test';
 
 export type ExpectedUseTime = {
   day: string;
-  month: string;
+  hour: string;
   time: string; // ví dụ "00", "30"
 };
 
@@ -29,7 +29,7 @@ export class BookingPage {
     const popup = this.page.locator('.ant-picker-dropdown, .datepicker, .ant-picker-panel');
 
     await popup.getByText(data.day, { exact: true }).click();
-    await popup.getByText(data.month, { exact: true }).click();
+    await popup.getByText(data.hour, { exact: true }).click();
     await popup.getByText(data.time, { exact: true }).click();
 
     await this.page.getByRole('button', { name: 'OK', exact: true }).click();

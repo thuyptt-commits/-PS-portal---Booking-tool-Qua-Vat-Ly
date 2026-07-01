@@ -2,6 +2,12 @@ import { Page, expect } from '@playwright/test';
 
 export class EditCategoryPage {
   constructor(private page: Page) {}
+  private async takeScreenshot(name: string) {
+        await this.page.screenshot({
+            path: `test-results/${name}-${Date.now()}.png`,
+            fullPage: true,
+        });
+    }
 
   async openCategoryManagement() {
     await this.page.getByText('Vận hành PS').click();
@@ -32,6 +38,10 @@ export class EditCategoryPage {
     await this.page
       .getByRole('button', { name: 'Xác nhận' })
       .click();
+
+      await this.takeScreenshot('success');
+                console.log('✅ Tạo thành công');
+    
   }
 
   async verifyUpdateSuccess() {

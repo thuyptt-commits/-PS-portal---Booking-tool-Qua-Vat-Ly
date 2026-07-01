@@ -2,6 +2,9 @@ import { Page } from '@playwright/test';
 
 export class HubGiftPage {
     constructor(private page: Page) { }
+    
+    
+    
 
     async login(
         email: string,
@@ -42,13 +45,13 @@ export class HubGiftPage {
                 hasText: 'Quà tặng',
             })
             .click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(3000);
         await this.page
             .locator('a')
             .filter({
                 hasText: 'Danh sách quà',
             })
-            .click();
+            .click({ timeout: 10000 });
         await this.page.waitForTimeout(2000);
         // 👉 CHỜ UI thật sự load xong (QUAN TRỌNG)
         console.log('✅ Mở danh sách quà');
@@ -61,10 +64,20 @@ export class HubGiftPage {
         await this.page.waitForTimeout(2000);
 
         const searchInput = this.page.locator('input.select2-search__field').first();
-        await this.page.waitForTimeout(2000);
+        const count = await this.page
+  .locator('input.select2-search__field')
+  .count();
+
+console.log('Search input count:', count);
+        await searchInput.waitFor({
+            state: 'visible',
+            timeout: 10000,
+        });
+
+        await searchInput.fill(titleId);
         //await searchInput.waitFor({ state: 'visible', timeout: 2000 });
         await searchInput.fill(titleId);
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(3000);
         // 👉 option đúng context
         const option = this.page
             .locator('.select2-results__option')
@@ -76,7 +89,7 @@ export class HubGiftPage {
 
         // 👉 search button
         await this.page.getByRole('button', { name: /Tìm kiếm/i }).click();
-         console.log('✅ Tìm kiếm thành công');
+        console.log('✅ Tìm kiếm thành công');
     }
 
     async openEdit() {
@@ -115,7 +128,7 @@ export class HubGiftPage {
             .filter({ hasText: productText })
             .first();
 
-        await option.waitFor({ state: 'visible', timeout: 1000 });
+        await option.waitFor({ state: 'visible', timeout: 10000 });
         await option.click();
 
         // 5. Click Thực hiện

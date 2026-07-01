@@ -12,7 +12,7 @@ test(
     );
 
     const supplierPriceData = {
-      giftId: '1555',
+      giftId: '1570',
       legalEntity: 'LG90357 - HELLO',
 
       locations: [

@@ -1,7 +1,7 @@
 import { Page, expect } from '@playwright/test';
 
 export class CreateContractGiftPage {
-  constructor(private page: Page) {}
+  constructor(private page: Page) { }
 
   async openCreateContractGift() {
     await this.page.getByText('Vận hành PS').click();
@@ -30,9 +30,10 @@ export class CreateContractGiftPage {
   async fillDisplayName(displayName: string) {
     await this.page
       .getByRole('textbox', {
-        name: 'Tên hiển thị cho khách hàng',
+        name: /^Tên hiển thị cho khách hàng$/,
       })
       .fill(displayName);
+      
   }
 
   async selectBrand(brand: string) {

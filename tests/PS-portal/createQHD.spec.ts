@@ -15,9 +15,9 @@ test(
     );
 
     const giftData = {
-      giftName: 'quà vật lý',
+      giftName: 'Quà Hoa Lan',
 
-      displayName: 'quà vật lý',
+      displayName: 'Quà Hoa Lan',
 
       brand: '- ACB (PS)',
 
